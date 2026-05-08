@@ -1,4 +1,4 @@
-# RayGUI.cs (Note You would have to need to have Raylib_cs package installed in your dotnet project (C#))
+# RayGUI-pp (Note You would have to need to have Raylib_cs package installed in your dotnet project (C#))
 This is a C# Representation of the C library RayGUI by @raysan5
 
 - Note this is not a perfect translation as this source was copied from the cmake implementation of raygui

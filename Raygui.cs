@@ -1220,5 +1220,10 @@ namespace RayGUI
                 }
             }
         }
+
+        public static void GuiFileDialog()
+        {
+            
+        }
     }
 }
