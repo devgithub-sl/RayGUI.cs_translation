@@ -343,100 +343,6 @@ using Raylib_cs;
 
 namespace RayGUI
 {
-    //----------------------------------------------------------------------------------
-    // Types and Structures Definition
-    //----------------------------------------------------------------------------------
-    public enum GuiState
-    {
-        STATE_NORMAL = 0,
-        STATE_FOCUSED,
-        STATE_PRESSED,
-        STATE_DISABLED
-    }
-
-    public enum GuiTextAlignment
-    {
-        TEXT_ALIGN_LEFT = 0,
-        TEXT_ALIGN_CENTER,
-        TEXT_ALIGN_RIGHT
-    }
-
-    public enum GuiTextAlignmentVertical
-    {
-        TEXT_ALIGN_TOP = 0,
-        TEXT_ALIGN_MIDDLE,
-        TEXT_ALIGN_BOTTOM
-    }
-
-    public enum GuiTextWrapMode
-    {
-        TEXT_WRAP_NONE = 0,
-        TEXT_WRAP_CHAR,
-        TEXT_WRAP_WORD
-    }
-
-    public enum GuiControl
-    {
-        DEFAULT = 0,
-        LABEL,
-        BUTTON,
-        TOGGLE,
-        SLIDER,
-        PROGRESSBAR,
-        CHECKBOX,
-        COMBOBOX,
-        DROPDOWNBOX,
-        TEXTBOX,
-        VALUEBOX,
-        CONTROL11,
-        LISTVIEW,
-        COLORPICKER,
-        SCROLLBAR,
-        STATUSBAR
-    }
-
-    public enum GuiControlProperty
-    {
-        BORDER_COLOR_NORMAL = 0,
-        BASE_COLOR_NORMAL,
-        TEXT_COLOR_NORMAL,
-        BORDER_COLOR_FOCUSED,
-        BASE_COLOR_FOCUSED,
-        TEXT_COLOR_FOCUSED,
-        BORDER_COLOR_PRESSED,
-        BASE_COLOR_PRESSED,
-        TEXT_COLOR_PRESSED,
-        BORDER_COLOR_DISABLED,
-        BASE_COLOR_DISABLED,
-        TEXT_COLOR_DISABLED,
-        BORDER_WIDTH = 12,
-        TEXT_PADDING = 13,
-        TEXT_ALIGNMENT = 14
-    }
-
-    public enum GuiDefaultProperty
-    {
-        TEXT_SIZE = 16,
-        TEXT_SPACING,
-        LINE_COLOR,
-        BACKGROUND_COLOR,
-        TEXT_LINE_SPACING,
-        TEXT_ALIGNMENT_VERTICAL,
-        TEXT_WRAP_MODE
-    }
-
-    public enum GuiToggleProperty { GROUP_PADDING = 16 }
-    public enum GuiSliderProperty { SLIDER_WIDTH = 16, SLIDER_PADDING }
-    public enum GuiProgressBarProperty { PROGRESS_PADDING = 16, PROGRESS_SIDE }
-    public enum GuiScrollBarProperty { ARROWS_SIZE = 16, ARROWS_VISIBLE, SCROLL_SLIDER_PADDING, SCROLL_SLIDER_SIZE, SCROLL_PADDING, SCROLL_SPEED }
-    public enum GuiCheckBoxProperty { CHECK_PADDING = 16 }
-    public enum GuiComboBoxProperty { COMBO_BUTTON_WIDTH = 16, COMBO_BUTTON_SPACING }
-    public enum GuiDropdownBoxProperty { ARROW_PADDING = 16, DROPDOWN_ITEMS_SPACING, DROPDOWN_ARROW_HIDDEN, DROPDOWN_ROLL_UP }
-    public enum GuiTextBoxProperty { TEXT_READONLY = 16 }
-    public enum GuiValueBoxProperty { SPINNER_BUTTON_WIDTH = 16, SPINNER_BUTTON_SPACING }
-    public enum GuiListViewProperty { LIST_ITEMS_HEIGHT = 16, LIST_ITEMS_SPACING, SCROLLBAR_WIDTH, SCROLLBAR_SIDE, LIST_ITEMS_BORDER_NORMAL, LIST_ITEMS_BORDER_WIDTH }
-    public enum GuiColorPickerProperty { COLOR_SELECTOR_SIZE = 16, HUEBAR_WIDTH, HUEBAR_PADDING, HUEBAR_SELECTOR_HEIGHT, HUEBAR_SELECTOR_OVERFLOW }
-
     public static class RayGui
     {
         public const int SCROLLBAR_LEFT_SIDE = 0;
@@ -460,7 +366,7 @@ namespace RayGUI
         private static uint guiIconScale = 1;
 
         private static bool guiTooltip = false;
-        private static string guiTooltipPtr = null;
+        private static string? guiTooltipPtr = null;
 
         private static bool guiControlExclusiveMode = false;
         private static Rectangle guiControlExclusiveRec = new Rectangle(0, 0, 0, 0);
@@ -470,8 +376,8 @@ namespace RayGUI
         private static uint[] guiStyle = new uint[RAYGUI_MAX_CONTROLS * (RAYGUI_MAX_PROPS_BASE + RAYGUI_MAX_PROPS_EXTENDED)];
         private static bool guiStyleLoaded = false;
 
-        private static uint[] guiIcons = new uint[RAYGUI_ICON_MAX_ICONS * RAYGUI_ICON_DATA_ELEMENTS] 
-        {
+        private static uint[] guiIcons =
+        [
             0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,      // ICON_NONE
             0x3ff80000, 0x2f082008, 0x2042207e, 0x40027fc2, 0x40024002, 0x40024002, 0x40024002, 0x00007ffe,      // ICON_FOLDER_FILE_OPEN
             0x3ffe0000, 0x44226422, 0x400247e2, 0x5ffa4002, 0x57ea500a, 0x500a500a, 0x40025ffa, 0x00007ffe,      // ICON_FILE_SAVE_CLASSIC
@@ -728,7 +634,7 @@ namespace RayGUI
             0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,      // ICON_253
             0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,      // ICON_254
             0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,      // ICON_255
-        };
+        ];
 
         //----------------------------------------------------------------------------------
         // Core Setup and State
