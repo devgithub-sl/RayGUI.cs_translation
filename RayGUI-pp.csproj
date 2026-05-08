@@ -5,6 +5,13 @@
     <RootNamespace>RayGUI_pp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>RayGUI-pp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Kisura WSP</Authors>
+    <Company>Defer Studios</Company>
+    <Description>A All in One Suite for Raylib Immediate mode UI by the RayGUI C library code</Description>
+    <RepositoryUrl>https://github.com/devgithub-sl/RayGUI-pp</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
